@@ -9,7 +9,7 @@
  * @copyright Copyright (c) 2021, Sunhill Technology <www.sunhillint.com>
  * @license   https://opensource.org/licenses/lgpl-3.0.html The GNU Lesser General Public License, version 3.0
  * @link      https://github.com/msbatal/PHP-Data-Security-Class
- * @version   1.3.0
+ * @version   1.4.0
  */
 
 class SunFilter
@@ -25,7 +25,7 @@ class SunFilter
      */
     public function __construct() {
         set_exception_handler(function($exception) {
-            echo '<b>[SunFilter] Exception:</b> '.$exception->getMessage();
+            echo '<b>[SunClass] Exception:</b> '.$exception->getMessage();
         });
     }
 
@@ -44,7 +44,11 @@ class SunFilter
         $this->result = null;
         switch ($type) {
             case 'string':
-                $this->result = filter_var($data, FILTER_SANITIZE_STRING);
+                if (version_compare(phpversion(), '8.1.0', '<')) {
+                    $this->result = filter_var($data, FILTER_SANITIZE_STRING); //deprecated as of PHP 8.1.0
+                } else {
+                    $this->result = htmlspecialchars(strip_tags($data)); //use htmlspecialchars() and strip_tags instead
+                }
             break;
             case 'float':
                 $this->result = (float) filter_var($data, FILTER_SANITIZE_NUMBER_FLOAT);
