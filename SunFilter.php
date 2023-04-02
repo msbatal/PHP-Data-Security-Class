@@ -9,7 +9,7 @@
  * @copyright Copyright (c) 2021, Sunhill Technology <www.sunhillint.com>
  * @license   https://opensource.org/licenses/lgpl-3.0.html The GNU Lesser General Public License, version 3.0
  * @link      https://github.com/msbatal/PHP-Data-Security-Class
- * @version   1.4.0
+ * @version   1.4.1
  */
 
 class SunFilter
@@ -38,9 +38,11 @@ class SunFilter
      * @return object
      */
     public function sanitize($data = null, $type = null) {
+        /*
         if (empty($type) || empty($data)) {
             throw new \Exception('Missing parameter for sanitization.');
         }
+        */
         $this->result = null;
         switch ($type) {
             case 'string':
@@ -81,9 +83,11 @@ class SunFilter
      * @return object
      */
     public function validate($data = null, $type = null) {
+        /*
         if (empty($type) || empty($data)) {
             throw new \Exception('Missing parameter for validation.');
         }
+        */
         $this->result = false;
         switch ($type) {
             case 'boolean':
