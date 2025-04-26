@@ -4,6 +4,8 @@ SunFilter is a simple PHP filter class.
 
 The goal of this class is to let you; Secure data sent by the users/visitors (with Get or Post method) or created by the script (Cookie or Session) by sanitizing or validating them.
 
+`Technical Document:` https://www.deepwiki.com/msbatal/PHP-Data-Security-Class
+
 <hr>
 
 `Data` attribute: This value sends by the users/visitors or uses value created by the script. This value may use GET (form or address bar) or POST (form) method, and Cookie or Session value.
