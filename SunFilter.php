@@ -40,7 +40,7 @@ class SunFilter
     public function sanitize($data = null, $type = null) {
         /*
         if (empty($type) || empty($data)) {
-            throw new \Exception('Missing parameter for sanitization.');
+            throw new Exception('Missing parameter for sanitization.');
         }
         */
         $this->result = null;
@@ -85,7 +85,7 @@ class SunFilter
     public function validate($data = null, $type = null) {
         /*
         if (empty($type) || empty($data)) {
-            throw new \Exception('Missing parameter for validation.');
+            throw new Exception('Missing parameter for validation.');
         }
         */
         $this->result = false;
