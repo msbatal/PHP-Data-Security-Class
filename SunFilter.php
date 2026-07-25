@@ -9,7 +9,7 @@
  * @copyright Copyright (c) 2021, Sunhill Technology <www.sunhillint.com>
  * @license   https://opensource.org/licenses/lgpl-3.0.html The GNU Lesser General Public License, version 3.0
  * @link      https://github.com/msbatal/PHP-Data-Security-Class
- * @version   1.4.1
+ * @version   1.4.2
  */
 
 class SunFilter
@@ -24,9 +24,6 @@ class SunFilter
      * Set exception handler
      */
     public function __construct() {
-        set_exception_handler(function($exception) {
-            echo '<b>[SunClass] Exception:</b> '.$exception->getMessage();
-        });
     }
 
     /**
